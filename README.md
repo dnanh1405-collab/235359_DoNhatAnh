@@ -72,3 +72,26 @@ docker pull dnanh1405/mern-backend:1.0
 
 > Image không chứa thông tin bí mật. Các biến môi trường (`MONGODB_URI`, `PORT`) được truyền khi chạy container. Xem `backend/.env.example` để biết các biến cần thiết.
 EOF
+cd /workspaces/235359_DoNhatAnh && cat >> README.md <<'EOF'
+
+## Chạy frontend bằng Docker
+
+### Build image
+`VITE_API_URL` là địa chỉ backend mà trình duyệt sẽ gọi, được gắn vào lúc build.
+```bash
+cd frontend
+docker build --build-arg VITE_API_URL=http://localhost:5000 -t dnanh1405/mern-frontend:1.0 .
+```
+
+### Chạy container
+```bash
+docker run -d --name frontend -p 3000:80 dnanh1405/mern-frontend:1.0
+```
+Mở http://localhost:3000 để xem giao diện (backend cần đang chạy ở http://localhost:5000).
+
+### Lấy image từ Docker Hub
+```bash
+docker pull dnanh1405/mern-frontend:1.0
+```
+EOF
+git status --short
