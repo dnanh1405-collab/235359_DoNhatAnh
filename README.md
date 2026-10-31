@@ -31,3 +31,16 @@ Xây dựng hệ thống quản lý thiết bị phòng học trên nền tảng
 
 ## 6. Triển khai
 Thông tin triển khai sẽ được cập nhật sau. 
+## 7. Cơ sở dữ liệu MongoDB Atlas
+
+- Database: 235359_DoNhatAnh
+- Collection: devices
+
+### Dữ liệu thiết bị mẫu
+- TB001: Máy chiếu Epson.
+- TB002: Máy tính Dell.
+- TB003: Loa Sony.
+
+Cơ sở dữ liệu được lưu trữ trên MongoDB Atlas.
+Backend sẽ sử dụng chuỗi kết nối MongoDB Atlas
+thông qua biến môi trường MONGODB_URI.
