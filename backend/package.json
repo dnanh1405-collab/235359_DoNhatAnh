@@ -1,7 +1,7 @@
 {
-  "name": "backend-quan-ly-thiet-bi",
+  "name": "device-management-backend",
   "version": "1.0.0",
-  "description": "Backend API quan ly thiet bi phong hoc",
+  "description": "Backend API for device management",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.4.5",
     "express": "^4.21.2",
     "mongoose": "^8.9.5"
   },
