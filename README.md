@@ -44,3 +44,31 @@ Thông tin triển khai sẽ được cập nhật sau.
 Cơ sở dữ liệu được lưu trữ trên MongoDB Atlas.
 Backend sẽ sử dụng chuỗi kết nối MongoDB Atlas
 thông qua biến môi trường MONGODB_URI.
+cd /workspaces/235359_DoNhatAnh && cat >> README.md <<'EOF'
+
+## Chạy backend bằng Docker
+
+### Build image
+```bash
+cd backend
+docker build -t dnanh1405/mern-backend:1.0 .
+```
+
+### Chạy container
+Tạo file `backend.env` (không commit lên Git) với nội dung:
+PORT=5000
+MONGODB_URI=mongodb+srv://clouduser:Nhatanh12345@cloud-lab.f9ib0az.mongodb.net/cloud_lab?retryWrites=true&w=majority&appName=cloud-lab
+
+Sau đó chạy:
+```bash
+docker run -d --name backend -p 5000:5000 --env-file backend.env dnanh1405/mern-backend:1.0
+docker logs backend
+```
+
+### Lấy image từ Docker Hub
+```bash
+docker pull dnanh1405/mern-backend:1.0
+```
+
+> Image không chứa thông tin bí mật. Các biến môi trường (`MONGODB_URI`, `PORT`) được truyền khi chạy container. Xem `backend/.env.example` để biết các biến cần thiết.
+EOF
